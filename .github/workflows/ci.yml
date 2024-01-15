@@ -53,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: trestle-content
-          path: /tmp/ocp4.json
+          path: /tmp
       - name: Import Trestle content
         run: |
             rm -rf component-definitions/ocp4/
