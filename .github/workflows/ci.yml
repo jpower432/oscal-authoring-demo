@@ -6,7 +6,7 @@ on:
       cac-reference:
         description: 'CAC reference'
         required: true
-        default: 'main'
+        default: 'master'
 
 jobs:
   create:
@@ -38,6 +38,7 @@ jobs:
 
   update:
     name: Update content
+    needs: create
     runs-on: ubuntu-latest
     permissions:
       contents: write
