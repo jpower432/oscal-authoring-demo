@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       cac-reference:
-        description: 'CAC reference'
+        description: 'Compliance as Code git reference'
         required: true
         default: 'master'
 
@@ -53,11 +53,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: trestle-content
-          path: ocp4.json
+          path: /tmp/ocp4.json
       - name: Import Trestle content
         run: |
             rm -rf component-definitions/ocp4/
-            trestle import -f ocp4.json -o ocp4
+            trestle import -f /tmp/ocp4.json -o ocp4
       - name: Update content
         uses: peter-evans/create-pull-request@v5.0.2
         with:
