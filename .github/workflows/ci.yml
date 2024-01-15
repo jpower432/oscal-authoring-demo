@@ -26,10 +26,11 @@ jobs:
           run: pip install pcre2 -r requirements.txt -r test-requirements.txt
       -   name: Build
           run: |-
-              source .pyenv.sh
               ./build_product ocp4
               ./utils/rule_dir_json.py
               ./utils/oscal/build_cd_from_policy.py -o build/ocp4.json -p fedramp_rev5_high -pr ocp4 -c nist_ocp4:high
+          env:
+            PYTHONPATH: ${{ github.workspace }}
       - name: Create artifacts
         uses: actions/upload-artifact@v2
         with:
