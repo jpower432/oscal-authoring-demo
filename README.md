@@ -6,7 +6,7 @@ A repository to hold OSCAL content for demonstrations
 
 - The example control file used in this repository is [nist_ocp4](https://github.com/ComplianceAsCode/content/blob/master/controls/nist_ocp4.yml)
 - One product equal one component and component definition - Example product we are using [ocp4](https://github.com/ComplianceAsCode/content/tree/master/products/ocp4)
-- Upstream OSCAL profiles are being used to filter the controls that get included in the control implementation
+- Upstream OSCAL [profiles](https://github.com/GSA/fedramp-automation/tree/master/dist/content/rev5/baselines) are being used to filter the controls that get included in the control implementation and as the control source in the control implementation on the component.
 
 ```mermaid
 graph TD
